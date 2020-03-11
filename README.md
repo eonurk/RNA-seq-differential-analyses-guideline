@@ -66,7 +66,7 @@ dds <- estimateSizeFactors(dds)
 
 # Normalize the counts using log2(cpm + c)
 # c term is added in order to avoid log(0)
-count.matrix.normalized <- log2(counts(dds, normalized=TRUE) + 0.5)
+count.matrix.normalized <- log2(counts(dds, normalized=TRUE) + 4)
 ```
 At this point we have both raw and normalized count matrix which could be used down the pipeline. 
 
@@ -175,8 +175,8 @@ We will run the same pipeline with 4 different methods: edgeR, limma-voom, limma
 
 First, let's define global thresholds for the analyses, which could be tweaked to your taste later.
 ```r
-FDR.cutoff <- 1
-LFC.cutoff <- 2
+FDR.cutoff <- 0.1
+LFC.cutoff <- 0
 ```
 
 I will start with `edgeR` since its pipeline can be used for both `limma` methods as well.
