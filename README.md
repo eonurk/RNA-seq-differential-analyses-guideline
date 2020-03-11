@@ -181,7 +181,7 @@ LFC.cutoff <- 2
 
 I will start with `edgeR` since its pipeline can be used for both `limma` methods as well.
 
-#### edgeR 
+### edgeR 
 One thing to notice here is that edgeR needs **raw count matrix** to run the differential analyses, so actually we did not have to create the normalized count matrix to use it (sorry!). The following script creates an `DGEList` object, calculates the normalization factors (using TMM) which are used internally in `edgeR` pipeline, creates a design matrix from our `group` that we created earlier in Data Processing chapter, estimates dispersion among genes and fits a generalized linear model to our data with the design matrix. Yeah it does a lot of things...
 
 ```r
@@ -247,7 +247,7 @@ for (i in seq_len(ncol(contrasts))){
 ```
 You can now check out `DE.genes.edger` to see differentially expressed genes for different comparisons!
 
-#### limma-trend
+### limma-trend
 For, limma-trend we need normalized counts with our design matrix and while computing the statistics with `eBayes` function we must set `trend = T`:
 
 ```r
@@ -269,7 +269,7 @@ for (i in seq_len(ncol(contrasts))){
     DE.genes.trend[[contrast.name]] <- top.table
 }
 ```
-#### limma-voom
+### limma-voom
 `voom` uses quantile normalization to eliminate library depth differences between replicates, therefore fits a slightly smoother curve to the mean-variance trend, compared to `limma-trend` pipeline. However, it does not mean that this will increase the number of true positive genes. So, if you have library depth differences, you can consider using voom pipeline.
 
 To see the mean-variance plot you can set `plot=TRUE` in `voom` function.
@@ -294,7 +294,7 @@ for (i in seq_len(ncol(contrasts))){
 }
 ```
 
-#### DESeq2
+### DESeq2
 `DESeq2` has a slightly different pipeline than above three. First, you assign the each sample to its corresponding group in a column. Then, you create an object with the raw count matrix and the column you created:
 
 ```r
