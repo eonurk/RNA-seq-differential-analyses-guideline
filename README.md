@@ -1,8 +1,8 @@
 # RNA Seq Differential Analyses Guideline in R
 I won't analyze any particular dataset in this tutorial, rather this is just an attempt to draw a roadmap for those who are interested in reproducible research. Any help to this cause is cordially appreciated!
 
-    Note: I will use "%>%" (pipes) from dplyr package throughout this tutorial, so remember to import it first:
 ```r
+# Note: I will use "%>%" (pipes) from dplyr package throughout this tutorial, so remember to import it first:
 library(dplyr) #install.packages("dplyr")
 ```
 
@@ -313,7 +313,7 @@ Then, you are ready to go:
 ```r
 dds = DESeq(dds)
 ```
-    Note: It may take longer compared to other methods, so saving the object may help for further analyses.
+    Note: It may take longer compared to other methods, so saving `dds` object may help for different analyses.
     
 Then, we can just test the results as we did earlier,
 ```r
