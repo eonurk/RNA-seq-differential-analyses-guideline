@@ -2,7 +2,8 @@
 I won't analyze any particular dataset in this tutorial, rather this is just an attempt to draw a roadmap for those who are interested in reproducible research. Any help to this cause is cordially appreciated!
 
 ```r
-# Note: I will use "%>%" (pipes) from dplyr package throughout this tutorial, so remember to import it first:
+# Note: I will use "%>%" (pipes) from dplyr package throughout this tutorial,
+# so remember to import it first:
 library(dplyr) #install.packages("dplyr")
 ```
 
