@@ -130,16 +130,21 @@ count.matrix.normalized <- convert_Ensembl_to_GeneID(mapping, count.matrix.norma
 The first thing you want to check now is the library sizes that you have, which is the sum of all counts of the genes per sample. This is because later this information will help us to determine the method that we want to use in our differential analyses. You can check your library sizes as follows:
 
 ```r
+
+# Create color pallette for cool figures
+library(paletteer)
+color.palette <- paletteer_d("ggsci::nrc_npg")
+
 barplot(colSums(count.matrix)/1e6, 
-        las = 3, 
-        col = 'red', 
-        main="Total read counts (millions)")  
+        las  = 3, 
+        col  = sample(color.palette, size = 1), 
+        main ="Total read counts (millions)")  
 ```
 To see whether the normalization helped eliminating the variation among library sizes, you can check out the distributions of the normalized library sizes:
 ```r
 boxplot(count.matrix.normalized, 
         las  = 3, 
-        col  = 'red',
+        col  = sample(color.palette, size = 1),
         ylab = 'Normalized expression levels',
         main = 'Distribution of transformed data') 
 ```
