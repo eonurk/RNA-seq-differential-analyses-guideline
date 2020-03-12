@@ -1,10 +1,12 @@
 # RNA Seq Differential Analyses Guideline in R
 
 <p align="center">
-  <img src="intro.gif"/>
+  <img src="intro.gif" height="400"/>
 </p>
 
-I won't analyze any particular dataset in this tutorial, rather this is just an attempt to draw a roadmap for those who are interested in reproducible research. Any help to this cause is cordially appreciated!
+## Introduction
+
+In this tutorial, starting from a `raw count matrix`, we are going to learn: preparing the data before differential analyses, checking the quality of transformed data, and building the same differential analyses pipeline with four widely used methods, namely `edgeR`, `DEseq2`, `limma-voom`, `limma-trend`. We won't analyze any particular dataset, rather this is just an attempt to draw a roadmap for those who are interested in reproducible research. Any help to this cause is cordially appreciated!
 
 ```r
 # Note: I will use "%>%" (pipes) from dplyr package throughout this tutorial,
@@ -13,7 +15,7 @@ library(dplyr) #install.packages("dplyr")
 ```
 
 ## Data Preprocessing
-Before starting to analyze any dataset, you should make sure that the quality of it is okay and to do so a preprocessing step is generally required.
+Before starting to analyze any dataset, you should make sure that the quality of the data is okay and to do so a preprocessing step is generally required.
 
 First of all, ensure that your raw count matrix is `k x (1+n)` where `k` is the number of genes and `n` is the number of samples that you have and plus `1` is the gene names (or ids). Then, you can re-order the genes according to their standard deviations, so that the most variant genes are at the top:
 
