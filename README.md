@@ -146,9 +146,9 @@ boxplot(count.matrix.normalized,
 and of course the normalized distributions itself:
 ```r
 plot(density(count.matrix.normalized[,1]), 
-     lwd = 2,
-     col = sample(color.palette, size = 1),
-     xlab ="Expression values", ylab="Density", 
+     lwd  = 2,
+     col  = sample(color.palette, size = 1),
+     xlab = "Expression values", ylab="Density", 
      main = "Distribution of transformed data")
 for (i in seq(2,ncol(count.matrix.normalized))){
     lines(density(count.matrix.normalized[,i]), 
