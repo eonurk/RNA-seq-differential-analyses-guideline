@@ -143,6 +143,20 @@ boxplot(count.matrix.normalized,
         ylab = 'Normalized expression levels',
         main = 'Distribution of transformed data') 
 ```
+and of course the normalized distributions itself:
+```r
+plot(density(count.matrix.normalized[,1]), 
+     lwd = 2,
+     col = sample(color.palette, size = 1),
+     xlab ="Expression values", ylab="Density", 
+     main = "Distribution of transformed data")
+for (i in seq(2,ncol(count.matrix.normalized))){
+    lines(density(count.matrix.normalized[,i]), 
+          lwd = 2, 
+          col = sample(color.palette, size = 1))
+}
+```
+
 ## PCA Plots
 PCA plots are suitable for checking whether any feature that you have explains your data in an obvious manner.
 Using the meta data matrix that we created earlier, and `ggplot2` package, we can create pretty plots for different features that want to investigate. For instance, we can seperate the samples according to their genders & disease status and represent genders with different colors and disease status with various shapes:
