@@ -1,6 +1,8 @@
 # RNA Seq Differential Analyses Guideline in R
 
-![](intro.gif)
+<p align="center">
+  <img src="intro.gif"/>
+</p>
 
 I won't analyze any particular dataset in this tutorial, rather this is just an attempt to draw a roadmap for those who are interested in reproducible research. Any help to this cause is cordially appreciated!
 
