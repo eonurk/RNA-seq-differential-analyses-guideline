@@ -6,7 +6,9 @@
 
 ## Introduction
 
-In this tutorial, starting from a `raw count matrix`, we are going to learn: preparing the data before differential analyses, checking the quality of transformed data, and building the same differential analyses pipeline with four widely used methods, namely `edgeR`, `DEseq2`, `limma-voom`, `limma-trend`. We won't analyze any particular dataset, rather this is just an attempt to draw a roadmap for those who are interested in reproducible research. Any help to this cause is cordially appreciated!
+In this tutorial, starting from a **raw count matrix**, we are going to learn: preparing the data before differential analyses, checking the quality of transformed data, and building the same differential analyses pipeline with four widely used methods, namely `edgeR`, `DEseq2`, `limma-voom`, `limma-trend`. We won't analyze any particular dataset, rather this is just an attempt to draw a roadmap for those who are interested in reproducible research. 
+
+Any help to this cause is cordially appreciated!
 
 ```r
 # Note: I will use "%>%" (pipes) from dplyr package throughout this tutorial,
