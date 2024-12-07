@@ -1,7 +1,7 @@
 # You might also want to check:
 
-[Celvox](https://celvox.co/solutions/seamless)
-[cinaR](https://github.com/eonurk/cinaR)
+- [Celvox](https://celvox.co/solutions/seamless)
+- [cinaR](https://github.com/eonurk/cinaR)
 
 # RNA Seq Differential Analyses Guideline in R
 
